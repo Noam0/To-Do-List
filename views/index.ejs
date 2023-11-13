@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/styles/layout.css"> 
+    <title>To Do List</title>
+</head>
+<body>
+<div id = "main-container">    
+
+    <div id="headline">
+        <h1> To Do List</h1>
+    </div>
+
+  
+    <div id = add-format>
+        <form id = "add-form" action="/submit" method="POST">
+            <input type="text" name="Text" placeholder="Add your task..">
+            <input type="date" name="Deadline" placeholder="Select deadline">
+            <input type="submit" value = "+">
+        </form>
+    </div>
+
+    <div id="small-headlines">
+        <p>task</p>
+        <p>deadline</p>
+        <p>actions</p>
+    </div>  
+    <% if (locals.errorMessage) { %>
+        <p><%= locals.errorMessage %></p>
+      <% } %>
+
+    <% if (tasks.length !== 0) { %>
+        <div id="list-format">
+            <ul>
+              <% tasks.forEach(task => { %>
+                <li class="task-item">
+                    <div class="task-content">
+                        <p><%= task.text %></p>
+                        <p><%= task.deadline %></p>
+                        
+                    </div>
+                    <form action="/delete" method="POST">
+                        <input type="hidden" name="Text" value="<%= task.id %>">
+                        <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                        <button type="submit" class="delete-btn"><i class="fas fa-trash-alt"></i></button>
+                      </form>
+                </li>
+              <% }); %>
+            </ul>
+          </div>
+      <% } %>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* This ensures the body takes at least the full height of the viewport */
+    margin: 0; /* Remove default body margin */
+  }
+
+  #main-container {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    max-width: 600px; /* Adjust as needed */
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+  }
+
+  #small-headlines {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* This adds space between the elements */
+    gap: 85px;
+    
+   
+  }
+
+  #small-headlines p {
+    position: relative;
+    margin: 0; /* Remove default margin for paragraphs */
+    margin-right: 130px;
+    margin-top: 20px;
+    left:60px;
+    
+
+  }
+
+  .task-item {
+    display: flex;
+    flex-direction: row;
+   
+  
+}
+
+.task-content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  column-gap: 150px;
+  right: 47%;
+}
+
+.task-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
